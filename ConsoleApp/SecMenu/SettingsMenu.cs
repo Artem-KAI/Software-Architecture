@@ -4,7 +4,10 @@ public static class SettingsMenu
 {
     public static void Show()
     {
-        if (Menu.Device is null) return;
+        if (Menu.Device == null)
+        {
+            return;
+        }
 
         Console.Clear();
         Console.WriteLine("""

@@ -18,10 +18,15 @@ public static class StatusView
         Console.WriteLine($"Принтер: {(device.HasPrinter ? "Так" : "Ні")}");
         Console.WriteLine($"Енергія: {(device.PowerOn ? "Є" : "Немає")}");
 
-        if (!device.PowerOn)
-            Console.WriteLine($"Годин залишилось (режим): {device.RemainingHours}");
+        if (device.PowerOn == false)
+        {
+            int hours = device.RemainingHours;
+            Console.WriteLine($"Годин залишилось (режим): {hours}");
+        }
         else
+        {
             Console.WriteLine("Годин залишилось: не обмежено (є енергія)");
+        }
 
         Console.WriteLine();
     }

@@ -12,10 +12,16 @@ public abstract class Memory
 
 public class Ram : Memory
 {
-    public Ram(int sizeGb) : base(sizeGb) { }
+    public Ram(int sizeGb) : base(sizeGb) 
+    {
+    
+    }
 }
 
 public class Storage : Memory
 {
-    public Storage(int sizeGb) : base(sizeGb) { }
+    public Storage(int sizeGb) : base(sizeGb) 
+    { 
+    
+    }
 }

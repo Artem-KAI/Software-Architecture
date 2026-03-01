@@ -24,21 +24,3 @@ public interface IDevice
     bool CanPerform(DeviceAction action);
     void Perform(DeviceAction action);
 }
-
-//using Domain.Enums; 
-
-//namespace Domain.Interfaces;
-
-//public interface IDevice
-//{
-//    string Name { get; }
-//    bool HasSoftware { get; }
-//    bool HasNetwork { get; }
-//    bool HasPrinter { get; }
-//    bool HasAudio { get; }
-//    bool PowerOn { get; }
-//    int RemainingHours { get; }
-
-//    bool CanPerform(DeviceAction action);
-//    void Perform(DeviceAction action);
-//}

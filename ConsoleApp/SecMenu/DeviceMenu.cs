@@ -15,15 +15,26 @@ public static class DeviceMenu
         0. Назад
         """);
 
-        Menu.Device = Console.ReadLine() switch
+        string? input = Console.ReadLine();
+
+        switch (input)
         {
-            "1" => new Laptop(6000),
-            "2" => new Smartphone(2500),
-            "3" => new Tablet(2500),
-            _ => Menu.Device
-        };
+            case "1":
+                Menu.Device = new Laptop(6000);
+                break;
+            case "2":
+                Menu.Device = new Smartphone(2500);
+                break;
+            case "3":
+                Menu.Device = new Tablet(2500);
+                break;
+            default:
+                break;
+        }
 
         if (Menu.Device != null)
+        {
             Menu.Service = new DeviceService(Menu.Device);
+        }
     }
 }

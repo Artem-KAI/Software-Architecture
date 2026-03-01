@@ -25,13 +25,23 @@ public static class Menu
             0. Вихід
             """);
 
-            switch (Console.ReadLine())
+            string? input = Console.ReadLine();
+
+            switch (input)
             {
-                case "1": DeviceMenu.Select(); break;
-                case "2": SettingsMenu.Show(); break;
-                case "3": ActionsMenu.Show(); break;
-                case "4": PowerMenu.Show(); break;
-                case "0": return;
+                case "1": DeviceMenu.Select(); 
+                    break;
+                case "2": SettingsMenu.Show(); 
+                    break;
+                case "3": ActionsMenu.Show(); 
+                    break;
+                case "4": PowerMenu.Show(); 
+                    break;
+                case "0": 
+                    return;
+
+                default:
+                    break;
             }
         }
     }

@@ -12,38 +12,7 @@ public class Laptop : DeviceBase
             new List<Memory> { new Ram(16), new Storage(512) },
             new TouchScreen()
         )
-    { }
+    {
+
+    }
 }
-
-//using Domain.Components;
-//using Domain.Devices;
-
-//namespace Domain.Devices;
-
-//public class Laptop : DeviceBase
-//{
-//    public Laptop(int batteryMah)
-//        : base(
-//            "Laptop",
-//            new Battery(batteryMah),
-//            new Processor("Intel Core i5"),
-//            new List<Memory>
-//            {
-//                new Ram(16),
-//                new Storage(512)
-//            },
-//            new TouchScreen()
-//        )
-//    {
-//    }
-//}
-
-////using Domain.Components;
-
-////namespace Domain.Devices;
-
-////public class Laptop : DeviceBase
-////{
-////    public Laptop(int batteryMah)
-////        : base("Laptop", new Battery(batteryMah)) { }
-////}

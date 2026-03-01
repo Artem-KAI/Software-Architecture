@@ -6,7 +6,10 @@ public static class ActionsMenu
 {
     public static void Show()
     {
-        if (Menu.Service is null) return;
+        if (Menu.Device == null)
+        {
+            return;
+        }
 
         Console.Clear();
         Console.WriteLine("""
@@ -19,24 +22,42 @@ public static class ActionsMenu
         0. Назад
         """);
 
-        var action = Console.ReadLine() switch
+        string? input = Console.ReadLine();
+        DeviceAction? action;
+
+        switch (input)
         {
-            "1" => DeviceAction.Work,
-            "2" => DeviceAction.Chat,
-            "3" => DeviceAction.ListenMusic,
-            "4" => DeviceAction.WatchVideo,
-            "5" => DeviceAction.PlayGame,
-            "6" => DeviceAction.PrintPhoto,
-            _ => (DeviceAction?)null
-        };
+            case "1": action = DeviceAction.Work; 
+                break;
+            case "2": action = DeviceAction.Chat;
+                break;
+            case "3": action = DeviceAction.ListenMusic;
+                break;
+            case "4": action = DeviceAction.WatchVideo;
+                break;
+            case "5": action = DeviceAction.PlayGame;   
+                break;
+            case "6": action = DeviceAction.PrintPhoto;
+                break;
+            default:
+                action = null;
+                break;
+        }
 
-        if (action == null) return;
-
+        if (action == null)
+        {
+            return;
+        }
+                
         bool ok = Menu.Service.TryPerform(action.Value);
 
-        Console.WriteLine(ok
-            ? "Дія виконана"
-            : "Неможливо виконати (немає передумов)");
+        if (ok == true)
+        {
+            Console.WriteLine("Дія виконана");
+        }
+        else{
+            Console.WriteLine("Неможливо виконати (немає передумов)");
+        }
 
         Console.ReadKey();
     }

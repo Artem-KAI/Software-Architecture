@@ -8,13 +8,13 @@ public abstract class DeviceBase : IDevice
 {
     public string Name { get; }
 
-    // Компоненти (вимога завдання)
+    // Компоненти 
     protected Processor Processor { get; }
     protected List<Memory> Memory { get; }
     protected TouchScreen TouchScreen { get; }
     protected Battery Battery { get; }
 
-    // Стан/передумови
+    // Стан
     public bool HasSoftware { get; private set; }
     public bool HasNetwork { get; private set; }
     public bool HasAudio { get; private set; }
@@ -38,12 +38,30 @@ public abstract class DeviceBase : IDevice
     }
 
     // Налаштування
-    public void InstallSoftware() => HasSoftware = true;
-    public void ConnectNetwork() => HasNetwork = true;
-    public void ConnectAudio() => HasAudio = true;
-    public void ConnectPrinter() => HasPrinter = true;
-    public void EnablePower() => PowerOn = true;
-    public void DisablePower() => PowerOn = false;
+    public void InstallSoftware()
+    {
+        HasSoftware = true;
+    }
+    public void ConnectNetwork()
+    {
+        HasNetwork = true;
+    }
+    public void ConnectAudio()
+    {
+        HasAudio = true;
+    }
+    public void ConnectPrinter()
+    {
+        HasPrinter = true;
+    }
+    public void EnablePower()
+    {
+        PowerOn = true;
+    }
+    public void DisablePower()
+    {
+        PowerOn = false;
+    }
 
     public bool CanPerform(DeviceAction action)
     {

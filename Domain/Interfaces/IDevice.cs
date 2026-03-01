@@ -12,8 +12,7 @@ public interface IDevice
     bool HasPrinter { get; }
     bool PowerOn { get; }
     int RemainingHours { get; }
-
-    // Налаштування (щоб UI не робив кастів)
+     
     void InstallSoftware();
     void ConnectNetwork();
     void ConnectAudio();
@@ -21,6 +20,8 @@ public interface IDevice
     void EnablePower();
     void DisablePower();
 
+    // перевіряє чи можна виконати дію: чи є ПЗ, мережа ітд
     bool CanPerform(DeviceAction action);
+    // виконує дію, змінює стан: режим батареї і тд
     void Perform(DeviceAction action);
 }

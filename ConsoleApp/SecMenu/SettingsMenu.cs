@@ -10,6 +10,7 @@ public static class SettingsMenu
         }
 
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("""
         1. Встановити ПЗ
         2. Підключитись до мережі
@@ -17,13 +18,26 @@ public static class SettingsMenu
         4. Підключити принтер
         0. Назад
         """);
+        Console.ResetColor();
 
-        switch (Console.ReadLine())
+        string? choice = Console.ReadLine();
+
+        switch (choice)
         {
-            case "1": Menu.Device.InstallSoftware(); break;
-            case "2": Menu.Device.ConnectNetwork(); break;
-            case "3": Menu.Device.ConnectAudio(); break;
-            case "4": Menu.Device.ConnectPrinter(); break;
+            case "1":
+                Menu.Device.InstallSoftware();
+                break;
+            case "2":
+                Menu.Device.ConnectNetwork();
+                break;
+            case "3":
+                Menu.Device.ConnectAudio();
+                break;
+            case "4":   
+                Menu.Device.ConnectPrinter();
+                break;
+            default:
+                break;
         }
     }
 }

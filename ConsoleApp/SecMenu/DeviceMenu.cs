@@ -8,12 +8,14 @@ public static class DeviceMenu
     public static void Select()
     {
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("""
         1. Ноутбук (5000-7000 мАг)
         2. Смартфон (2000-3000 мАг)
         3. Планшет (2000-3000 мАг)
         0. Назад
         """);
+        Console.ResetColor();
 
         string? input = Console.ReadLine();
 

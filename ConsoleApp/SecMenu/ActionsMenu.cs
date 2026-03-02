@@ -12,6 +12,7 @@ public static class ActionsMenu
         }
 
         Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("""
         1. Працювати
         2. Чатитися
@@ -21,6 +22,7 @@ public static class ActionsMenu
         6. Друкувати фото
         0. Назад
         """);
+        Console.ResetColor();
 
         string? input = Console.ReadLine();
         DeviceAction? action;

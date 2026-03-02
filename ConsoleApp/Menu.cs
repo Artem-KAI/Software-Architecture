@@ -16,7 +16,8 @@ public static class Menu
         {
             Console.Clear();
             StatusView.Show(Device);
-
+            
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("""
             1. Вибрати техніку
             2. Налаштування
@@ -24,6 +25,7 @@ public static class Menu
             4. Вкл/Викл енергію
             0. Вихід
             """);
+            Console.ResetColor();
 
             string? input = Console.ReadLine();
 
